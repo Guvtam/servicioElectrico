@@ -1,0 +1,33 @@
+{% extends 'home/base.html' %}
+{% load static %}
+
+{% block title %}- Servicios {% endblock%}
+
+{% block content %}
+<div class="contenedor-servicios">
+    <h1 class="titulo">Nuestros Servicios</h1>
+    <p class="textoServicios">¿Necesitas soluciones eléctricas confiables y profesionales? Nosotros tenemos la energía que necesitas. Ya sea que estés buscando instalaciones, reparaciones o mantenimiento, nuestro equipo de especialistas está listo para brindarte el mejor servicio.</p>
+    <hr class="container marketing">
+
+    <div class="servicios">
+        <div class="row">
+            {% for serv in servicios %}
+            <div class="col-md-4">
+              <div class="card h-100" >
+                <img src="{{ serv.imagen.url }}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">{{ serv.nombre }}</h5>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+            
+        </div>
+    </div>
+  </div>
+
+
+{% endblock %}
+
+
+

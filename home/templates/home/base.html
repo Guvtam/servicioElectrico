@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+    {% load static %}
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="{% static 'home/img/encendiendo.png' %}" type="image/png">
+
+    <title>Electricista {% block title %} {% endblock%}</title>
+    <!--Bootstrap-->
+    <link href="{% static 'home/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet" >
+    <!--Estilos-->
+    <link rel="stylesheet" href="{% static 'home/css/style.css' %}">
+    <!--Google Fonts-->
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@500&family=Open+Sans&family=Playfair+Display:wght@500&family=Roboto+Slab:wght@300&display=swap" rel="stylesheet">
+
+  </head>
+  <body>
+   
+    <ul id="navbar" class="nav justify-content-center" >
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'home' %}"> 
+                <img class="logo" src="{% static 'home/img/encendiendo.png' %}" alt="">
+            </a>
+          </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'home' %}">INICIO</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'servicios' %}">SERVICIOS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'contacto' %}">CONTACTO</a>
+        </li>
+      </ul>
+
+      <!--boton flotante-->
+      <div class="floating-whatsapp">
+        <a href="https://api.whatsapp.com/send/?phone=56953097689" target="_blank">
+            <img src="{% static 'home/img/whatsapp.png' %}" >
+        </a>
+    </div>
+
+    <!--llamada-->
+    <div class="floating-call">
+        <a href="tel:+56953097689" target="_blank">
+            <img src="{% static 'home/img/llamada.png' %}" >
+        </a>
+    </div>
+    
+
+      {% block content %}
+
+      {% endblock %}
+
+      <!-- Footer -->
+    <footer class="footer text-faded text-center py-5">
+        <div class="container">
+          <p class="m-0">
+              <a href="#" class="link">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+              <a href="#" class="link">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+              <a href="#" class="link">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+          </p>
+          <p class="m-0 mbt">
+              <a href="#" class="link">Política de privacidad</a> ·
+              <a href="#" class="link">Aviso legal</a> ·
+              <a href="#" class="link">Cookies</a>
+          </p>
+          <p class="m-0 mbt1">&copy; Todos los derechos reservados 2023</p>
+        </div>
+      </footer>
+
+
+    <script src="{% static 'home/vendor/bootstrap/js/bootstrap.bundle.min.js' %}" ></script>
+    
+    <script src="{% static 'home/vendor/bootstrap/js/bootstrap.min.js' %}" ></script>
+  </body>
+
+
+</html>

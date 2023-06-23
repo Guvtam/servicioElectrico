@@ -1,0 +1,57 @@
+{% extends 'home/base.html' %}
+
+{% block title %}- Contacto {% endblock%}
+
+{% block content %}
+<div class="contacto">
+
+        <h1 class="titulo" style="color: aliceblue;">Contáctanos</h1>
+        <p class="textoContacto">¡No te quedes a oscuras! Contáctanos hoy mismo y experimenta la calidad y la eficiencia que nuestros electricistas certificados pueden ofrecerte. Juntos, iluminaremos tus proyectos y resolveremos cualquier desafío eléctrico que tengas. ¡Tu satisfacción es nuestra corriente principal!</p>
+
+        <hr class="container marketing">
+
+        <div class="formulario">
+            <form action="" method="POST">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="{{ form.nombre.id_for_label }}" class="form-label"></label>
+                    {{ form.nombre }}
+                </div>
+                <div class="form-group">
+                    <label for="{{ form.email.id_for_label }}" class="form-label"></label>
+                    {{ form.email }}
+                </div>
+                <div class="form-group">
+                    <label for="{{ form.telefono.id_for_label }}" class="form-label"></label>
+                    {{ form.telefono }}
+                </div>
+                <div class="form-group">
+                    <label for="{{ form.asunto.id_for_label }}" class="form-label"></label>
+                    {{ form.asunto }}
+                </div>
+                <div class="form-group">
+                    <label for="{{ form.mensaje.id_for_label }}" class="form-label"></label>
+                    {{ form.mensaje }}
+                </div>
+
+                <br>
+            
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary">Enviar</button>
+                </div>
+            </form>
+        </div>
+        {% if messages %}
+            {% for message in messages %}
+                {% if message.tags == 'success' %}
+                    <script>
+                        window.onload = function() {
+                            alert("{{ message }}");
+                        }
+                    </script>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+    </div>
+        {% endblock %}
+    
